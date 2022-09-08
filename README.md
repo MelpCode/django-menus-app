@@ -39,3 +39,9 @@ This app was created usign Django Web Framework and PostgreSQL.
 6. Create your ```.env``` file within *django_menus_app* folder and set:
 
 ```PSQL_NAME``` ```PSQL_HOST``` ```PSQL_USER``` ```PSQL_PASSWORD``` ```PSQL_PORT```
+
+7. Move to the django_menus_app folder and type in your CMD
+
+```
+  python manage.py runserver
+```
