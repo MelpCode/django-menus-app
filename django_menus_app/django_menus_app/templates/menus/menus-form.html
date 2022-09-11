@@ -5,7 +5,7 @@
 {%block content%}
 <h1>Create a new Menu</h1>
 <div>
-  <form action="/menus/new" method="POST">
+  <form action="/menus/new/" method="POST">{%csrf_token%}
     <div>
       <input type="text" name="main" placeholder="Insert main dish">
     </div>
