@@ -1,0 +1,18 @@
+{% extends 'layout/main.html' %}
+
+{%block content%}
+<div>
+  <form action="/menus/new" method="POST">
+    <div>
+      <input type="text" name="main" placeholder="Insert main dish">
+    </div>
+    <div>
+      <input type="text" name="dessert" placeholder="Insert dessert dish">
+    </div>
+    <div>
+      <input type="number" name="price" placeholder="Insert price">
+    </div>
+    <button type="submit">Create Menu</button>
+  </form>
+</div>
+{%endblock%}
