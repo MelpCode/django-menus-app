@@ -6,4 +6,11 @@
 
   <h1>Menus</h1>
 
+  {%for menu in menus%}
+    <h3>Menu {{menu.id}}</h3>
+    <p>{{menu.starter}}</p>
+    <p>{{menu.main}}</p>
+    <p> S./ {{menu.price}}</p>
+  {%endfor%}
+
 {%endblock%}

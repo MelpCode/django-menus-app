@@ -4,7 +4,8 @@ from menus.models import Menus
 # Create your views here.
 
 def menus(request):
-  return render(request, 'menus/menus.html')
+  menus = Menus.objects.all()
+  return render(request, 'menus/menus.html',{"menus":menus})
 
 def create_menu(request):
   if request.method == 'POST':
