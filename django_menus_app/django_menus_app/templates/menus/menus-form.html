@@ -7,6 +7,9 @@
 <div>
   <form action="/menus/new/" method="POST">{%csrf_token%}
     <div>
+      <input type="text" name="starter" placeholder="Insert starter dish">
+    </div>
+    <div>
       <input type="text" name="main" placeholder="Insert main dish">
     </div>
     <div>
