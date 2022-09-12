@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from menus.models import Menu
+from menus.models import Menus
 
 # Create your views here.
 
@@ -12,7 +12,7 @@ def create_menu(request):
     main = request.POST['main']
     dessert = request.POST['dessert']
     price = request.POST['price']
-    new_menu = Menu(starter=starter,main=main,dessert=dessert,price=price)
+    new_menu = Menus(starter=starter,main=main,dessert=dessert,price=price)
     new_menu.save()
     print('Menu Saved Succesfully')
     return redirect('/menus/')
