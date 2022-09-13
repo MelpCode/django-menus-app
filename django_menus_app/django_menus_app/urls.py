@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from menus.views import menus, create_menu
+from menus.views import menus, create_menu, delete_menu
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('menus/',menus),
-    path('menus/new/',create_menu),
+    path('menus/new/',create_menu, name="create_menu"),
+    path('/menus/delete/<int:menu_id>',delete_menu, name="delete_menu")
 
 ]

@@ -20,3 +20,10 @@ def create_menu(request):
     return redirect('/menus/')
   else:
     return render(request,'menus/menus-form.html')
+  
+def delete_menu(request,menu_id):
+  if request.method == 'POST':
+    print(menu_id)
+    menu = Menus.objects.get(id=menu_id)
+    menu.delete()
+    return redirect('/menus/')
