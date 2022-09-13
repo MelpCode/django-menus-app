@@ -40,7 +40,25 @@ This app was created usign Django Web Framework and PostgreSQL.
 
 ```PSQL_NAME``` ```PSQL_HOST``` ```PSQL_USER``` ```PSQL_PASSWORD``` ```PSQL_PORT```
 
-7. Move to the django_menus_app folder and type in your CMD
+7. Create a database with the name registered ````PSQL_NAME```
+
+```sql
+  CREATE DATABASE <NAME>
+```
+
+8. Make migrations:
+
+  move to the folder django_menus_app
+
+  ```
+    python manage.py migrate
+  ```
+
+  ```
+    python manage.py makemigrations
+  ```
+
+8. Move to the django_menus_app folder and type in your CMD
 
 ```
   python manage.py runserver
