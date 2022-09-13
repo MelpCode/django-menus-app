@@ -27,3 +27,19 @@ def delete_menu(request,menu_id):
     menu = Menus.objects.get(id=menu_id)
     menu.delete()
     return redirect('/menus/')
+  
+def edit_menu(request,menu_id):
+  menu = Menus.objects.get(id=menu_id)
+  if request.method == 'POST':
+    main = request.POST['main']
+    starter = request.POST['starter']
+    dessert = request.POST['dessert']
+    price = request.POST['price']
+    menu.main = main
+    menu.starter =starter
+    menu.dessert = dessert
+    menu.price = price
+    menu.save()
+    return redirect('/menus/')
+  else:
+    return render(request,'menus/menus-form.html',{"edit":True,"menu":menu})

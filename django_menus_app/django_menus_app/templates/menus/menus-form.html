@@ -3,22 +3,42 @@
 {%block title%}New Menu | puretaste{%endblock%}
 
 {%block content%}
-<h1>Create a new Menu</h1>
+<h1>{%if edit%}Update menu {%else%} Create new menu {%endif%}</h1>
 <div>
-  <form action="/menus/new/" method="POST">{%csrf_token%}
+  <form action="{%if edit%}{% url 'edit_menu' menu.id%} {%else%}/menus/new/{%endif%}" method="POST">
+    {%csrf_token%}
     <div>
-      <input type="text" name="starter" placeholder="Insert starter dish">
+      <input 
+        type="text" 
+        name="starter"
+        value="{%if edit%}{{menu.starter}}{%else%}{%endif%}" 
+        placeholder="Insert starter dish">
     </div>
     <div>
-      <input type="text" name="main" placeholder="Insert main dish">
+      <input 
+        type="text" 
+        name="main"
+        value="{%if edit%}{{menu.main}}{%else%}{%endif%}"  
+        placeholder="Insert main dish">
     </div>
     <div>
-      <input type="text" name="dessert" placeholder="Insert dessert dish">
+      <input 
+        type="text" 
+        name="dessert"
+        value="{%if edit%}{{menu.dessert}}{%else%}{%endif%}"  
+        placeholder="Insert dessert dish">
     </div>
     <div>
-      <input type="string" name="price" placeholder="Insert price">
+      <input 
+        type="string" 
+        name="price"
+        value="{%if edit%}{{menu.price}}{%else%}{%endif%}"  
+        placeholder="Insert price">
     </div>
-    <button type="submit">Create Menu</button>
+    <button 
+      type="submit">
+      {%if edit%} Update menu {%else%} Create menu {%endif%}
+    </button>
   </form>
 </div>
 {%endblock%}
