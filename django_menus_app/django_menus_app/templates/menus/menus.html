@@ -12,6 +12,7 @@
     <h3>Menu {{menu.id}}</h3>
     <p>{{menu.starter}}</p>
     <p>{{menu.main}}</p>
+    <p>{{menu.dessert}}</p>
     <p> S./ {{menu.price}}</p>
     <form action="{% url 'delete_menu' menu.id %}" method="POST">{%csrf_token%}
       <button type="submit">Delete</button>

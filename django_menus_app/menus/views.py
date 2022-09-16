@@ -45,7 +45,12 @@ def edit_menu(request,menu_id):
     return render(request,'menus/menus-form.html',{"edit":True,"menu":menu})
 
 def search_menu(request):
-  if request.method=='GET':
-    print(request.GET['type_menu'])
-    print(request.GET['value'])
-  return redirect('/menus/')
+  if request.method=='POST':
+    value=request.POST['value']
+    if request.POST['type_menu'] == 'starter':
+      menus = Menus.objects.filter(starter__icontains=value)
+    if request.POST['type_menu'] == 'main':
+      menus = Menus.objects.filter(main__icontains=value)
+    if request.POST['type_menu'] == 'dessert':
+      menus = Menus.objects.filter(dessert__icontains=value)
+  return render(request,'menus/menus.html',{"menus":menus})
