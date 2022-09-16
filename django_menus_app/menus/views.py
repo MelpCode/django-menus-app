@@ -26,6 +26,7 @@ def delete_menu(request,menu_id):
     print(menu_id)
     menu = Menus.objects.get(id=menu_id)
     menu.delete()
+    messages.add_message(request,messages.SUCCESS,'Menu deleted successfully')
     return redirect('/menus/')
   
 def edit_menu(request,menu_id):
