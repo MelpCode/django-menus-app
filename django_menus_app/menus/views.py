@@ -43,3 +43,9 @@ def edit_menu(request,menu_id):
     return redirect('/menus/')
   else:
     return render(request,'menus/menus-form.html',{"edit":True,"menu":menu})
+
+def search_menu(request):
+  if request.method=='GET':
+    print(request.GET['type_menu'])
+    print(request.GET['value'])
+  return redirect('/menus/')
