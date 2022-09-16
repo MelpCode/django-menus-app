@@ -6,6 +6,8 @@
 
   <h1>Menus</h1>
 
+  {% includes '../partials/search.html'%}
+
   {%for menu in menus%}
     <h3>Menu {{menu.id}}</h3>
     <p>{{menu.starter}}</p>

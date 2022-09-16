@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('menus/',menus),
     path('menus/new/',create_menu, name="create_menu"),
-    path('/menus/delete/<int:menu_id>',delete_menu, name="delete_menu"),
-    path('/menus/edit/<int:menu_id>', edit_menu, name="edit_menu"),
+    path('menus/delete/<int:menu_id>',delete_menu, name="delete_menu"),
+    path('menus/edit/<int:menu_id>', edit_menu, name="edit_menu"),
 
 ]
