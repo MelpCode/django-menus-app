@@ -10,5 +10,8 @@
   {% include 'partials/navigation.html' %}
   {% include 'partials/messages.html'%}
   {%block content%}{%endblock%}
+
+  {% load static %}
+  <sscript src="{% static 'js/main.js' %}"></sscript>
 </body>
 </html>
