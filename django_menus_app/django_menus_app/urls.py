@@ -14,6 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path
 from menus.views import menus, create_menu, delete_menu, edit_menu,search_menu
 
@@ -25,3 +27,7 @@ urlpatterns = [
     path('menus/edit/<int:menu_id>', edit_menu, name="edit_menu"),
     path('menus/search',search_menu)
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                document_root=settings.MEDIA_ROOT)
