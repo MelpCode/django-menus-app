@@ -6,3 +6,4 @@ class Menus(models.Model):
   main = models.CharField(max_length=40)
   dessert = models.CharField(max_length=40)
   price = models.FloatField()
+  image = models.ImageField(upload_to='menus',null=True)
