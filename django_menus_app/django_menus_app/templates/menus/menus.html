@@ -9,7 +9,7 @@
   {% include '../partials/search.html' %}
 
   {%for menu in menus%}
-    <h3>Menu {{menu.id}}</h3>
+    <img src="{{menu.image.url}}"/>
     <p>{{menu.starter}}</p>
     <p>{{menu.main}}</p>
     <p>{{menu.dessert}}</p>
