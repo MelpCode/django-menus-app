@@ -14,7 +14,8 @@ def create_menu(request):
     main = request.POST['main']
     dessert = request.POST['dessert']
     price = request.POST['price']
-    new_menu = Menus(starter=starter,main=main,dessert=dessert,price=price)
+    image = request.FILES.get('image')
+    new_menu = Menus(starter=starter,main=main,dessert=dessert,price=price,image=image)
     new_menu.save()
     messages.add_message(request,messages.SUCCESS,'Menu added successfully')
     return redirect('/menus/')
