@@ -3,46 +3,52 @@
 {%block title%}New Menu | puretaste{%endblock%}
 
 {%block content%}
-<h1>{%if edit%}Update menu {%else%} Create new menu {%endif%}</h1>
-<div>
-  <form action="{%if edit%}{% url 'edit_menu' menu.id%} {%else%}/menus/new/{%endif%}" 
-      method="POST" enctype="multipart/form-data">
-    {%csrf_token%}
-    <div>
-      <input 
-        type="text" 
-        name="starter"
-        value="{%if edit%}{{menu.starter}}{%else%}{%endif%}" 
-        placeholder="Insert starter dish">
-    </div>
-    <div>
-      <input 
-        type="text" 
-        name="main"
-        value="{%if edit%}{{menu.main}}{%else%}{%endif%}"  
-        placeholder="Insert main dish">
-    </div>
-    <div>
-      <input 
-        type="text" 
-        name="dessert"
-        value="{%if edit%}{{menu.dessert}}{%else%}{%endif%}"  
-        placeholder="Insert dessert dish">
-    </div>
-    <div>
-      <input 
-        type="string" 
-        name="price"
-        value="{%if edit%}{{menu.price}}{%else%}{%endif%}"  
-        placeholder="Insert price">
-    </div>
-    <div>
-      <input type="file" name="image">
-    </div>
-    <button 
-      type="submit">
-      {%if edit%} Update menu {%else%} Create menu {%endif%}
-    </button>
-  </form>
+<h1 class="mt-2 mb-4">{%if edit%}Update menu {%else%} Create new menu {%endif%}</h1>
+<div class="mt-4 col-md-4 offset-md-4">
+  <div class="card card-body">
+    <form action="{%if edit%}{% url 'edit_menu' menu.id%} {%else%}/menus/new/{%endif%}" 
+        method="POST" enctype="multipart/form-data">
+      {%csrf_token%}
+      <div class="mb-3">
+        <input
+          class="form-control" 
+          type="text" 
+          name="starter"
+          value="{%if edit%}{{menu.starter}}{%else%}{%endif%}" 
+          placeholder="Insert starter dish">
+      </div>
+      <div class="mb-3">
+        <input 
+          class="form-control"
+          type="text" 
+          name="main"
+          value="{%if edit%}{{menu.main}}{%else%}{%endif%}"  
+          placeholder="Insert main dish">
+      </div>
+      <div  class="mb-3">
+        <input
+          class="form-control" 
+          type="text" 
+          name="dessert"
+          value="{%if edit%}{{menu.dessert}}{%else%}{%endif%}"  
+          placeholder="Insert dessert dish">
+      </div>
+      <div class="mb-3">
+        <input
+          class="form-control" 
+          type="string" 
+          name="price"
+          value="{%if edit%}{{menu.price}}{%else%}{%endif%}"  
+          placeholder="Insert price">
+      </div>
+      <div class="mb-3">
+        <input class="form-control" type="file" name="image">
+      </div>
+      <button 
+        class="btn btn-primary" type="submit">
+        {%if edit%} Update menu {%else%} Create menu {%endif%}
+      </button>
+    </form>
+  </div>
 </div>
 {%endblock%}
