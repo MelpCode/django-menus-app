@@ -1,7 +1,7 @@
 <div class="mb-4 d-md-flex justify-content-end">
   <form class="row row-cols-lg-auto g-3 ml-auto" action="/menus/search" method="POST"> {%csrf_token%}
     <div class="col">
-      <input class="form-control" type="text" name="value">
+      <input class="form-control" type="text" name="value" placeholder="Search">
     </div>
     <div class="col mt-auto">
       <input class="form-check-input" type="radio" id="starter" name="type_menu" value="starter">
