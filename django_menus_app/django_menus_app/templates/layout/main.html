@@ -13,8 +13,10 @@
 </head>
 <body>
   {% include 'partials/navigation.html' %}
-  {% include 'partials/messages.html'%}
-  {%block content%}{%endblock%}
+  <div class="container">
+    {% include 'partials/messages.html'%}
+    {%block content%}{%endblock%}
+  </div>
 
   {% load static %}
   <script src="{% static 'js/main.js' %}"></script>
