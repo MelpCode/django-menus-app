@@ -8,15 +8,27 @@
 
   {% include '../partials/search.html' %}
 
-  {%for menu in menus%}
-    <img src="{{menu.image.url}}"/>
-    <p>{{menu.starter}}</p>
-    <p>{{menu.main}}</p>
-    <p>{{menu.dessert}}</p>
-    <p> S./ {{menu.price}}</p>
-    <form action="{% url 'delete_menu' menu.id %}" method="POST">{%csrf_token%}
-      <button type="submit">Delete</button>
-    </form>
-    <a href="{% url 'edit_menu' menu.id %}">Edit</a>
-  {%endfor%}
+  <div class="row">
+    {%for menu in menus%}
+        <div class="col-md-3">
+          <div class="card card-body">
+            <img class="img-fluid" src="{{menu.image.url}}"/>
+            <div class="text-center fst-italic mt-4">
+              <p> <span class="fw-bold">Starter:</span>  {{menu.starter}}</p>
+              <p> <span class="fw-bold">Main:</span> {{menu.main}}</p>
+              <p> <span class="fw-bold">Dessert:</span> {{menu.dessert}}</p>
+            </div>
+            <h2 class="text-end"> S./ {{menu.price}}</h2>
+            <div class="d-flex justify-content-evenly mt-4">
+              <form action="{% url 'delete_menu' menu.id %}" method="POST">{%csrf_token%}
+                <button class="btn btn-danger "type="submit">Delete</button>
+              </form>
+              <a class="btn btn-info text-white" href="{% url 'edit_menu' menu.id %}">Edit</a>
+            </div>
+          </div>
+          
+        </div>
+    {%endfor%}
+  </div>
+  
 {%endblock%}
