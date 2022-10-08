@@ -1,12 +1,15 @@
 {% if messages %}
+
 <div class="row">
     <div class="col-md-4">
-        <ul class=" mt-4 alert alert-success alert-dismissible fade show" role="alert">
+        <ul class="mt-4 alert alert-success alert-dismissible fade show" role="alert">
             {% for message in messages %}
-            <p>{{ message }}</p>
+                {{ message }}
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             {% endfor %}
         </ul>
     </div>
 </div>
+
+
 {% endif %}
