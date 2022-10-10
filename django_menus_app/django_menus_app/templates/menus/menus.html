@@ -14,6 +14,18 @@
     {%for menu in menus%}
         <div class="col-md-3">
           <div class="card card-body">
+              <ul class="ms-auto navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-ellipsis"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                    <li><a class="dropdown-item" href="{% url 'edit_menu' menu.id %}">Edit</a></li>
+                    <li><a class="dropdown-item" href="">Delete</a></li>
+                    
+                  </ul>
+                </li>
+              </ul>
             <img class="img-fluid" src="{{menu.image.url}}"/>
             <div class="text-center fst-italic mt-4">
               <p> <span class="fw-bold">Starter:</span>  {{menu.starter}}</p>
@@ -25,7 +37,6 @@
               <form action="{% url 'delete_menu' menu.id %}" method="POST">{%csrf_token%}
                 <button class="btn btn-danger "type="submit">Delete</button>
               </form>
-              <a class="btn btn-info text-white" href="{% url 'edit_menu' menu.id %}">Edit</a>
             </div>
           </div>
         </div>
