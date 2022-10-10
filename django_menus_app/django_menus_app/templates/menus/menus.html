@@ -16,13 +16,13 @@
           <div class="card card-body">
               <ul class="ms-auto navbar-nav">
                 <li class="nav-item dropdown">
-                  <a class="nav-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link" href="#" id="menu-options" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <i class="fa-solid fa-ellipsis"></i>
                   </a>
-                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="menu-options">
                     <li><a class="dropdown-item" href="{% url 'edit_menu' menu.id %}">Edit</a></li>
                     <li>
-                      <a class="dropdown-item" href="" id="delete-menu" data-id="{{menu.id}}" data-csrftoken="{{ csrf_token }}"> 
+                      <a class="dropdown-item" href="#" id="delete-menu" data-id="{{menu.id}}" data-csrftoken="{{ csrf_token }}"> 
                         Delete
                       </a>
                     </li>

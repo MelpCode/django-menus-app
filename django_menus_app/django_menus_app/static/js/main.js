@@ -5,7 +5,7 @@ deleteMenu.addEventListener('click',(e)=>{
   e.preventDefault();
   const id= deleteMenu.dataset.id;
   const csrfToken = deleteMenu.dataset.csrftoken
-  if(confirm('Are you sure do you want to delete it?')){
+  if(confirm('Are you sure do you want to delete this menu?')){
     fetch(`http://localhost:8000/menus/delete/${id}`,
       {
         method:'POST',
